@@ -1,0 +1,28 @@
+﻿<Window x:Class="FinalProject.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="SecondWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+
+    </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Margin="10">
+            <Label Content="User Details Window" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBox x:Name="Id"/>
+            <TextBox x:Name="first_name"/>
+            <TextBox x:Name="last_name"/>
+            <TextBox x:Name="email"/>
+            <TextBox x:Name="phone_number"/>
+           
+        </StackPanel>
+    </Grid>
+</Window>
