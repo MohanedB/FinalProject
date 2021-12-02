@@ -11,10 +11,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
-                        <TextBlock Text="FirstName: "/>
-                        <TextBlock Text="LastName: "/>
-                        <TextBlock Text="{Binding FirstName}" FontWeight="Bold"></TextBlock>
-                        <TextBlock Text="{Binding LastName}" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Name: "/>
+                        <TextBlock Text="{Binding first_name}" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding last_name}" FontWeight="Bold"></TextBlock>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -26,11 +26,11 @@ namespace FinalProject
 
             this.contact = contact;
 
-            Id.Text = contact.Id.ToString();
-            first_name.Text = contact.f_name;
-            last_name.Text = contact.l_name;
-            email.Text = contact.email;
-            phone_number.Text = contact.phone_number;
+            Id.Text ="ID: "+contact.Id.ToString();
+            first_name.Text ="First Name: "+ contact.first_name;
+            last_name.Text = "last Name: "+ contact.last_name;
+            email.Text = "Email: "+ contact.email;
+            phone_number.Text = "Phone Number: "+ contact.phone_num;
         }
     }
     }
