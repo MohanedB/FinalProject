@@ -75,6 +75,7 @@ namespace FinalProject
             {
 
                 SecondWindow secondwindow = new SecondWindow(select);
+                this.Close();
                 secondwindow.ShowDialog();
             }
         }
