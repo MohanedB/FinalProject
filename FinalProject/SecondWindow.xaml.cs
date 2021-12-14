@@ -30,10 +30,18 @@ namespace FinalProject
 
             Id.Text ="ID: "+contact.Id.ToString();
             first_name.Text ="First Name: "+ contact.first_name;
-            last_name.Text = "last Name: "+ contact.last_name;
+            last_name.Text = "Last Name: "+ contact.last_name;
             email.Text = "Email: "+ contact.email;
             phone_number.Text = "Phone Number: "+ contact.phone_num;
         }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateWindow updateWindow = new UpdateWindow(contact);
+            this.Close();
+            updateWindow.ShowDialog();
+        }
+
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             int Id = contact.Id;
@@ -48,9 +56,8 @@ namespace FinalProject
                     con.Open();
                     var rowsAffected = cmd.ExecuteNonQuery();
                     MessageBox.Show("Record Deleted Successfully");
+                    con.Close();
 
-                    
-                    
                     MainWindow mainWindow = new MainWindow();
                     this.Close();
                     mainWindow.ShowDialog();
@@ -63,6 +70,13 @@ namespace FinalProject
                 }
             }
         }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.ShowDialog();
+        }
     }
-    }
+}
 
