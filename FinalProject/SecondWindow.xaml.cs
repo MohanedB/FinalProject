@@ -45,30 +45,7 @@ namespace FinalProject
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             int Id = contact.Id;
-            using (SqlConnection con = new SqlConnection("data source=.; database = Contact_Manager ; integrated security = SSPI"))
-            {
-                SqlCommand cmd = new SqlCommand("DELETE From Contacts Where Id = @Id", con);
-
-                cmd.Parameters.AddWithValue("@Id", Id);
-
-                try
-                {
-                    con.Open();
-                    var rowsAffected = cmd.ExecuteNonQuery();
-                    MessageBox.Show("Record Deleted Successfully");
-                    con.Close();
-
-                    MainWindow mainWindow = new MainWindow();
-                    this.Close();
-                    mainWindow.ShowDialog();
-                    
-                    
-                }
-                catch (SqlException exc)
-                {
-                    MessageBox.Show("Error Generated. Details: " + exc.ToString());
-                }
-            }
+            DBManager.DeleteContact(Id, this);
         }
 
         private void Return_Click(object sender, EventArgs e)

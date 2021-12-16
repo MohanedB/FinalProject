@@ -55,7 +55,7 @@ namespace FinalProject
         private void exportButton_Click(object sender, RoutedEventArgs e)
         {
             List<Contact> myContacts = DBManager.ListContacts();
-            FileInfo file = new FileInfo("C:/Users/Ethan/Documents/" + ((TextBox)exportFileNameBox).Text + ".csv");
+            FileInfo file = new FileInfo(((TextBox)exportFileNameBox).Text);
             try
             {
                 if (!file.Exists)
@@ -99,12 +99,12 @@ namespace FinalProject
         private void importButton_Click(object sender, RoutedEventArgs e)
         {
             List<string> contactStrings = new List<string>();
-            FileInfo file = new FileInfo("C:/Users/Ethan/Documents/" + ((TextBox)exportFileNameBox).Text + ".csv");
+            FileInfo file = new FileInfo(((TextBox)exportFileNameBox).Text);
             try
             {
                 if (file.Exists)
                 {
-                    using (StreamReader sr = new StreamReader("C:/Users/Ethan/Documents/" + ((TextBox)exportFileNameBox).Text + ".csv"))
+                    using (StreamReader sr = new StreamReader(((TextBox)exportFileNameBox).Text))
                     {
                         string line;
                         while ((line = sr.ReadLine()) != null)

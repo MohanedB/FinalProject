@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid>
-        <ListView Margin="10" x:Name="DataBinding" SelectionMode="Single" SelectionChanged="DataBinding_SelectionChanged" >
+        <ListView Margin="10,10,9.6,68.4" x:Name="DataBinding" SelectionMode="Single" SelectionChanged="DataBinding_SelectionChanged" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -28,24 +28,24 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="exportButton" Content="Export as CSV" Height="40" Width="100" Click="exportButton_Click" RenderTransformOrigin="0.5,0.5" Margin="463,215,230.6,215.4">
+        <Button x:Name="exportButton" Content="Export CSV" Height="40" Width="100" Click="exportButton_Click" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform X="-320" Y="200"/>
+                    <TranslateTransform X="-210" Y="200"/>
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBox Name="exportFileNameBox" HorizontalAlignment="Left" Height="24" Margin="452,422,0,0" TextWrapping="Wrap" Text="ContactList" VerticalAlignment="Top" Width="332" FontSize="16"/>
-        <Button x:Name="importButton" Content="Import from CSV" Height="40" Width="100" Click="importButton_Click" RenderTransformOrigin="0.5,0.5" Margin="580,215,113.6,215.4">
+        <TextBox Name="exportFileNameBox" HorizontalAlignment="Left" Height="24" Margin="452,422,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="332" FontSize="16"/>
+        <Button x:Name="importButton" Content="Import CSV" Height="40" Width="100" Click="importButton_Click" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform X="-320" Y="200"/>
+                    <TranslateTransform X="-100" Y="200"/>
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>

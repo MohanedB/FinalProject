@@ -286,6 +286,33 @@ namespace FinalProject
             }
         }
 
+        public static void DeleteContact(int indexNumber, SecondWindow myWindow)
+        {
+            using (SqlConnection con = new SqlConnection("data source=.; database = Contact_Manager ; integrated security = SSPI"))
+            {
+                SqlCommand cmd = new SqlCommand("DELETE From Contacts Where Id = @Id", con);
+
+                cmd.Parameters.AddWithValue("@Id", indexNumber);
+
+                try
+                {
+                    con.Open();
+                    var rowsAffected = cmd.ExecuteNonQuery();
+                    MessageBox.Show("Record Deleted Successfully");
+                    con.Close();
+
+                    MainWindow mainWindow = new MainWindow();
+                    myWindow.Close();
+                    mainWindow.ShowDialog();
+
+                }
+                catch (SqlException exc)
+                {
+                    MessageBox.Show("Error Generated. Details: " + exc.ToString());
+                }
+            }
+        }
+
         public static void DeleteAllContacts()
         {
             using (SqlConnection con = new SqlConnection("data source=.; database = Contact_Manager ; integrated security = SSPI"))
